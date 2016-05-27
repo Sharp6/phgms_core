@@ -1,7 +1,7 @@
 "use strict";
 
-module.exports = function(dependencies) {
-	var state = "ON";
+module.exports = function(dependencies, initialState) {
+	var state = initialState || "ON";
 	var stateLastChangedTimestamp = dependencies.moment();
 	var stateLastUpdatedTimestamp = dependencies.moment();
 
