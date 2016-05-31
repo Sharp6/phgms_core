@@ -17,6 +17,12 @@ module.exports = function(dependencies, initialState) {
 
 		if(prevState !== state) {
 			stateLastChangedTimestamp = dependencies.moment();
+
+			dependencies.db.insert({
+				state: state,
+				stateLastChangedTimestamp: stateLastChangedTimestamp,
+				stateLastUpdatedTimestamp: stateLastUpdatedTimestamp
+			});
 		}
 	};
 
